@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        /* Add your styles here */
+        body {
+            background-color: #001f3f; /* Navy Blue */
+            color: white;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            margin-top: 50px;
+            padding: 30px;
+            background-size: cover;
+            border: 4px solid gold;
+            border-radius: 20px;
+        }
+
+        h1 {
+            color: white;
+            text-decoration: underline;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid gold;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: gold;
+            color: black; /* Change color to black */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <p>{{ result }}</p>
+        <h2 style="color: gold; text-decoration: underline;">Metrics</h2>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Training</th>
+                <th>Testing</th>
+            </tr>
+            {% for metric, train_value, test_value in metrics %}
+            <tr>
+                <td>{{ metric }}</td>
+                <td>{{ train_value }}</td>
+                <td>{{ test_value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
